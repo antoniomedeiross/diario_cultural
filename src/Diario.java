@@ -1,10 +1,15 @@
+import java.time.LocalDate;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Diario {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.println("Bem vindo ao Diario Cultural");
-
+        String year = "2020";
+        LocalDate data = LocalDate.ofEpochDay(LocalDate.now().getYear());
+        if(year.matches("[0-9]{4}") && data.isAfter(LocalDate.parse(year))){
+            System.out.println(year);
+        } else {
+            System.out.println("Padrão de ano inválido");
+        }
     }
 }
